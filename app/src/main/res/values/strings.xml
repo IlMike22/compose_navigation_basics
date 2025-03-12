@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ComposeBasics_State_Screen_Handling</string>
+    <string name="screen_b">Screen B</string>
+    <string name="screen_a">Screen A</string>
+</resources>
