@@ -1,7 +1,6 @@
 package com.example.composebasics_state_screen_handling.ui.login
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,21 +11,17 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.composebasics_state_screen_handling.LoginState
 import com.example.composebasics_state_screen_handling.ui.LoginViewModel
-import com.example.composebasics_state_screen_handling.ui.theme.ComposeBasics_State_Screen_HandlingTheme
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun LoginScreenFirstApproach(
-    viewModel: LoginViewModel = viewModel<LoginViewModel>(),
+fun LoginScreenBad(
+    viewModel: LoginViewModel = koinViewModel(),
     modifier: Modifier
 ) {
     Box(
@@ -63,13 +58,4 @@ fun LoginScreenFirstApproach(
     }
 }
 
-// TODO create preview
-@Preview
-@Composable
-private fun LoginScreenFirstSamplePreview() {
-    ComposeBasics_State_Screen_HandlingTheme {
-        LoginScreenFirstApproach(
-            modifier = Modifier
-        )
-    }
-}
+//TODO create preview

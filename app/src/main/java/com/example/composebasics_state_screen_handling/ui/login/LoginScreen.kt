@@ -22,14 +22,14 @@ import com.example.composebasics_state_screen_handling.LoginState
 import com.example.composebasics_state_screen_handling.NavigationData
 import com.example.composebasics_state_screen_handling.ui.LoginViewModel
 import com.example.composebasics_state_screen_handling.ui.theme.ComposeBasics_State_Screen_HandlingTheme
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun LoginScreenRoot(
     modifier: Modifier = Modifier,
+    viewModel: LoginViewModel = koinViewModel(),
     onLoginSuccess: (NavigationData) -> Unit
 ) {
-    val viewModel = viewModel<LoginViewModel>()
-
     LoginScreen(
         state = viewModel.state,
         onLoginSuccess = {
