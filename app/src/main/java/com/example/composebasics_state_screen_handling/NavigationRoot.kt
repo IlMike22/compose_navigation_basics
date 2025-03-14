@@ -9,10 +9,9 @@ import androidx.navigation.navigation
 import androidx.navigation.toRoute
 import com.example.composebasics_state_screen_handling.ui.AuthRoot
 import com.example.composebasics_state_screen_handling.ui.LoginRoute
-import com.example.composebasics_state_screen_handling.ui.LoginScreenRoot
+import com.example.composebasics_state_screen_handling.ui.login.LoginScreenRoot
 import com.example.composebasics_state_screen_handling.ui.MainRoot
 import com.example.composebasics_state_screen_handling.ui.OverviewRoute
-
 
 @Composable
 fun NavigationRoot(
@@ -35,9 +34,9 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController) {
                 onLoginSuccess = { navigationData ->
                     navController.navigate(
                         OverviewRoute(
-                            navigationData.isLoggedIn,
-                            navigationData.name,
-                            navigationData.age
+                            isLoggedIn = navigationData.isLoggedIn,
+                            name = navigationData.name,
+                            age = navigationData.age
                         )
                     ) {
                         popUpTo(AuthRoot) {
@@ -53,7 +52,8 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController) {
 private fun NavGraphBuilder.mainGraph() {
     navigation<MainRoot>(startDestination = OverviewRoute()) {
         composable<OverviewRoute> {
-            //val args = it.toRoute<OverviewRoute>()
+            val args = it.toRoute<OverviewRoute>()
+
             OverviewScreenRoot()
         }
     }

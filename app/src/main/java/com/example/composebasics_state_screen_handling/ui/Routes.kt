@@ -15,6 +15,6 @@ data object LoginRoute
 @Serializable
 data class OverviewRoute(
     val isLoggedIn: Boolean = false,
-    val name:String = "",
+    val name: String = "",
     val age: Int = 0
 )

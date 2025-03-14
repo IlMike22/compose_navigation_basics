@@ -13,4 +13,12 @@ class LoginViewModel : ViewModel() {
     init {
         state = state.copy(text = "Login")
     }
+
+    fun onUserMailChanged(userMail:String) {
+        state = state.copy(userMail = userMail)
+    }
+
+    fun onLoginSuccess() {
+        // handle login success
+    }
 }
