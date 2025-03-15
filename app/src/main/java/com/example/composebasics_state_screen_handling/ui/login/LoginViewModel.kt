@@ -1,10 +1,9 @@
-package com.example.composebasics_state_screen_handling.ui
+package com.example.composebasics_state_screen_handling.ui.login
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.composebasics_state_screen_handling.LoginState
 
 class LoginViewModel : ViewModel() {
     var state by mutableStateOf(LoginState())

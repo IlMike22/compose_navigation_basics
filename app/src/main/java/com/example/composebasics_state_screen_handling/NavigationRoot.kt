@@ -7,11 +7,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import androidx.navigation.toRoute
-import com.example.composebasics_state_screen_handling.ui.AuthRoot
+import com.example.composebasics_state_screen_handling.ui.AuthRootRoute
 import com.example.composebasics_state_screen_handling.ui.LoginRoute
 import com.example.composebasics_state_screen_handling.ui.login.LoginScreenRoot
-import com.example.composebasics_state_screen_handling.ui.MainRoot
+import com.example.composebasics_state_screen_handling.ui.MainRootRoute
 import com.example.composebasics_state_screen_handling.ui.OverviewRoute
+import com.example.composebasics_state_screen_handling.ui.overview.OverviewScreenRoot
 
 @Composable
 fun NavigationRoot(
@@ -19,7 +20,7 @@ fun NavigationRoot(
 ) {
     NavHost(
         navController = navController,
-        startDestination = AuthRoot
+        startDestination = AuthRootRoute
     ) {
         authGraph(navController)
         mainGraph()
@@ -27,7 +28,7 @@ fun NavigationRoot(
 }
 
 private fun NavGraphBuilder.authGraph(navController: NavHostController) {
-    navigation<AuthRoot>(startDestination = LoginRoute)
+    navigation<AuthRootRoute>(startDestination = LoginRoute)
     {
         composable<LoginRoute> {
             LoginScreenRoot(
@@ -39,7 +40,7 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController) {
                             age = navigationData.age
                         )
                     ) {
-                        popUpTo(AuthRoot) {
+                        popUpTo(AuthRootRoute) {
                             inclusive = true
                         }
                     }
@@ -50,7 +51,7 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController) {
 }
 
 private fun NavGraphBuilder.mainGraph() {
-    navigation<MainRoot>(startDestination = OverviewRoute()) {
+    navigation<MainRootRoute>(startDestination = OverviewRoute()) {
         composable<OverviewRoute> {
             val args = it.toRoute<OverviewRoute>()
 

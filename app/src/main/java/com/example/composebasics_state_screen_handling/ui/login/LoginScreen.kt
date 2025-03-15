@@ -17,10 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.composebasics_state_screen_handling.LoginState
 import com.example.composebasics_state_screen_handling.NavigationData
-import com.example.composebasics_state_screen_handling.ui.LoginViewModel
 import com.example.composebasics_state_screen_handling.ui.theme.ComposeBasics_State_Screen_HandlingTheme
 import org.koin.androidx.compose.koinViewModel
 
@@ -34,7 +31,7 @@ fun LoginScreenRoot(
         state = viewModel.state,
         onLoginSuccess = {
             onLoginSuccess(
-                NavigationData(true, "Michl Muster", 78)
+                NavigationData(true, "Max Muster", 78)
             )
         },
         onUserMailChanged = {
@@ -85,3 +82,18 @@ fun LoginScreen(
 }
 
 //TODO create preview
+
+@Preview
+@Composable
+private fun LoginScreenPreview() {
+    ComposeBasics_State_Screen_HandlingTheme {
+        LoginScreen(
+            state = LoginState(
+                text = "Welcome",
+                userMail = "test12@gmail.com",
+            ),
+            onLoginSuccess = {},
+            onUserMailChanged = {}
+        )
+    }
+}

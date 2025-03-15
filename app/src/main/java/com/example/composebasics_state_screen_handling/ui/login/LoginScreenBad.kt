@@ -15,12 +15,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.composebasics_state_screen_handling.ui.LoginViewModel
+import com.example.composebasics_state_screen_handling.ui.theme.ComposeBasics_State_Screen_HandlingTheme
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun LoginScreenBad(
+fun LoginScreen(
     viewModel: LoginViewModel = koinViewModel(),
     modifier: Modifier
 ) {
@@ -59,3 +60,13 @@ fun LoginScreenBad(
 }
 
 //TODO create preview
+
+@Preview
+@Composable
+private fun LoginScreenPreview() {
+    ComposeBasics_State_Screen_HandlingTheme {
+        LoginScreen(
+            modifier = Modifier
+        )
+    }
+}
