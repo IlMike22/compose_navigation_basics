@@ -19,6 +19,5 @@ class OverviewViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
             welcomeTitle = "Welcome ${args.name}",
             subtitle = "You are ${args.age} years old and successfully logged in."
         )
-
     }
 }

@@ -4,10 +4,10 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-data object AuthRootRoute
+data object AuthRoute
 
 @Serializable
-data object MainRootRoute
+data object MainRoute
 
 @Serializable
 data object LoginRoute

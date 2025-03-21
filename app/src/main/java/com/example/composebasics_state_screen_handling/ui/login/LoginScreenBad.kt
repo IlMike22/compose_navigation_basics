@@ -59,14 +59,3 @@ fun LoginScreen(
     }
 }
 
-//TODO create preview
-
-@Preview
-@Composable
-private fun LoginScreenPreview() {
-    ComposeBasics_State_Screen_HandlingTheme {
-        LoginScreen(
-            modifier = Modifier
-        )
-    }
-}

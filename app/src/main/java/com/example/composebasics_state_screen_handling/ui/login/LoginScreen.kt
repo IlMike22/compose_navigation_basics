@@ -31,7 +31,7 @@ fun LoginScreenRoot(
         state = viewModel.state,
         onLoginSuccess = {
             onLoginSuccess(
-                NavigationData(true, "Max Muster", 78)
+                NavigationData(true, "John Doe", 42)
             )
         },
         onUserMailChanged = {
@@ -81,19 +81,3 @@ fun LoginScreen(
     }
 }
 
-//TODO create preview
-
-@Preview
-@Composable
-private fun LoginScreenPreview() {
-    ComposeBasics_State_Screen_HandlingTheme {
-        LoginScreen(
-            state = LoginState(
-                text = "Welcome",
-                userMail = "test12@gmail.com",
-            ),
-            onLoginSuccess = {},
-            onUserMailChanged = {}
-        )
-    }
-}

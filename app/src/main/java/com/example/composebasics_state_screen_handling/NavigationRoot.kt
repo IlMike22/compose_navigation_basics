@@ -7,10 +7,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import androidx.navigation.toRoute
-import com.example.composebasics_state_screen_handling.ui.AuthRootRoute
+import com.example.composebasics_state_screen_handling.ui.AuthRoute
 import com.example.composebasics_state_screen_handling.ui.LoginRoute
 import com.example.composebasics_state_screen_handling.ui.login.LoginScreenRoot
-import com.example.composebasics_state_screen_handling.ui.MainRootRoute
+import com.example.composebasics_state_screen_handling.ui.MainRoute
 import com.example.composebasics_state_screen_handling.ui.OverviewRoute
 import com.example.composebasics_state_screen_handling.ui.overview.OverviewScreenRoot
 
@@ -20,7 +20,7 @@ fun NavigationRoot(
 ) {
     NavHost(
         navController = navController,
-        startDestination = AuthRootRoute
+        startDestination = AuthRoute
     ) {
         authGraph(navController)
         mainGraph()
@@ -28,7 +28,7 @@ fun NavigationRoot(
 }
 
 private fun NavGraphBuilder.authGraph(navController: NavHostController) {
-    navigation<AuthRootRoute>(startDestination = LoginRoute)
+    navigation<AuthRoute>(startDestination = LoginRoute)
     {
         composable<LoginRoute> {
             LoginScreenRoot(
@@ -40,7 +40,7 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController) {
                             age = navigationData.age
                         )
                     ) {
-                        popUpTo(AuthRootRoute) {
+                        popUpTo(AuthRoute) {
                             inclusive = true
                         }
                     }
@@ -51,10 +51,9 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController) {
 }
 
 private fun NavGraphBuilder.mainGraph() {
-    navigation<MainRootRoute>(startDestination = OverviewRoute()) {
+    navigation<MainRoute>(startDestination = OverviewRoute()) {
         composable<OverviewRoute> {
             val args = it.toRoute<OverviewRoute>()
-
             OverviewScreenRoot()
         }
     }
